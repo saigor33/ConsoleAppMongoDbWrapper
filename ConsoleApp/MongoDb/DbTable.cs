@@ -1,10 +1,12 @@
 ﻿namespace ConsoleAppMongoDbWrapper;
 
-public partial class DbTable<T> where T : DbTable<T>
+public abstract partial class DbTable<T>
+: IQueryBuilderFactory<>
+    where T : DbTable<T>
 {
     private readonly string _tableName;
 
-    public DbTable(string tableName)
+    protected DbTable(string tableName)
     {
         _tableName = tableName;
     }
@@ -13,4 +15,9 @@ public partial class DbTable<T> where T : DbTable<T>
     {
         return new CommonTypedGetQueryBuilder(_tableName);
     }
+}
+
+public interface IQueryBuilderFactory<TGetQueryBuilder>
+{
+    public TGetQueryBuilder Get();
 }

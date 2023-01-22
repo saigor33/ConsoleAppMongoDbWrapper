@@ -33,7 +33,7 @@ public abstract class BaseGetQuery<THandler>
             yield return null;
 
         if (task.IsFaulted)
-            throw new CustomException(task.Exception);
+            throw new InternalException(task.Exception);
 
         handlerResultSetter.SetResult(task.Result);
     }

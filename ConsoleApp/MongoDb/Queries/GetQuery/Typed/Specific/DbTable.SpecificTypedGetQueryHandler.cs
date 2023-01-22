@@ -19,9 +19,9 @@ partial class DbTable<T>
                     _result = new Result(successGetQueryResult.rows);
                     break;
                 case ErrorGetQueryResult errorGetQueryResult:
-                    throw new CustomException(errorGetQueryResult.exception);
+                    throw new InternalException(errorGetQueryResult.exception);
                 default:
-                    throw new CustomException("Unhandled type");
+                    throw new InternalException("Unhandled type");
             }
         }
     }

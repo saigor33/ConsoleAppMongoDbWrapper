@@ -1,15 +1,15 @@
 ﻿namespace ConsoleAppMongoDbWrapper;
 
-public class CustomException : Exception
+public class InternalException : Exception
 {
     private readonly Exception _exception;
 
-    public CustomException(Exception exception)
+    public InternalException(Exception exception)
     {
         _exception = exception;
     }
 
-    public CustomException(string unahdledType)
+    public InternalException(string unahdledType)
     {
         throw new NotImplementedException();
     }
