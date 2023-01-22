@@ -9,8 +9,8 @@ public partial class DbTable<T> where T : DbTable<T>
         _tableName = tableName;
     }
 
-    public GetTypedQueryBuilder Get()
+    public CommonTypedGetQueryBuilder Get()
     {
-        return new GetTypedQueryBuilder(_tableName);
+        return new CommonTypedGetQueryBuilder(_tableName);
     }
 }

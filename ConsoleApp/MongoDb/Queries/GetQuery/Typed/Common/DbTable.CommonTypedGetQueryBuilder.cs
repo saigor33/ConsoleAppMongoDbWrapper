@@ -2,18 +2,18 @@
 
 public partial class DbTable<T>
 {
-    public class GetTypedQueryBuilder
+    public class CommonTypedGetQueryBuilder
     {
         private readonly string _tableName;
 
-        public GetTypedQueryBuilder(string tableName)
+        public CommonTypedGetQueryBuilder(string tableName)
         {
             _tableName = tableName;
         }
 
-        public GetTypedCommonQuery Build()
+        public CommonTypedGetQuery Build()
         {
-            return new GetTypedCommonQuery(_tableName);
+            return new CommonTypedGetQuery(_tableName);
         }
     }
 }

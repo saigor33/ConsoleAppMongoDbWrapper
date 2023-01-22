@@ -4,9 +4,9 @@ public partial class DbTable<T>
 {
     public class Result
     {
-        public Dictionary<string, object> rows => _rows;
+        public List<Dictionary<string, object>> rows => _rows;
 
-        private readonly Dictionary<string, object> _rows;
+        private readonly List<Dictionary<string, object>> _rows;
 
         public Result(List<Dictionary<string, object>> rows)
         {

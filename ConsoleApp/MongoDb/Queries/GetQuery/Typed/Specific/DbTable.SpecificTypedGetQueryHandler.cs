@@ -2,8 +2,8 @@
 
 partial class DbTable<T>
 {
-    public class TypedSpecificGetQueryHandler
-        : BaseQuery<IGetQueryResult, TypedSpecificGetQueryHandler>.IHandlerResultSetter,
+    public class SpecificTypedGetQueryHandler
+        : BaseQuery<IGetQueryResult, SpecificTypedGetQueryHandler>.IHandlerResultSetter,
             IHandler
     {
         public bool hasResult => _result != null;
